@@ -14,7 +14,7 @@ class PrepifyApp : Application() {
             PurchasesConfiguration.Builder(this, BuildConfig.REVENUECAT_API_KEY)
                 .build()
         )
-        
+
         // Best practice: Enable debug logs in debug mode
         if (BuildConfig.DEBUG) {
             Purchases.logLevel = LogLevel.DEBUG
