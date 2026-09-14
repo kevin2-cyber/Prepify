@@ -15,7 +15,7 @@ class PrepifyApp : Application() {
                 .build()
         )
 
-        // Best practice: Enable debug logs in debug mode
+        // Enable debug logs in debug mode
         if (BuildConfig.DEBUG) {
             Purchases.logLevel = LogLevel.DEBUG
         }

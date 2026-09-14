@@ -1,14 +1,11 @@
 package com.kimikevin.prepify
 
-import android.content.Context
 import com.revenuecat.purchases.CustomerInfo
-import com.revenuecat.purchases.EntitlementInfo
+import com.revenuecat.purchases.Offerings
 import com.revenuecat.purchases.Purchases
 import com.revenuecat.purchases.PurchasesError
 import com.revenuecat.purchases.getCustomerInfoWith
 import com.revenuecat.purchases.getOfferingsWith
-import com.revenuecat.purchases.models.StoreProduct
-import com.revenuecat.purchases.purchaseWith
 
 object PurchasesManager {
     private const val PRO_ENTITLEMENT_ID = "prepify_pro"
@@ -39,7 +36,7 @@ object PurchasesManager {
     /**
      * Fetches offerings (products) configured in RevenueCat.
      */
-    fun fetchOfferings(onResult: (com.revenuecat.purchases.Offerings?, PurchasesError?) -> Unit) {
+    fun fetchOfferings(onResult: (Offerings?, PurchasesError?) -> Unit) {
         Purchases.sharedInstance.getOfferingsWith(
             onError = { error -> onResult(null, error) },
             onSuccess = { offerings -> onResult(offerings, null) }
